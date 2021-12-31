@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import Section from 'components/Section/Section.jsx';
+import Statistics from './components/Statistics/Statistics.jsx';
+
 export default class App extends Component {
   state = {
     good: 0,
@@ -40,16 +43,15 @@ export default class App extends Component {
           })}
         </ul>
 
-        <h3>Statistic</h3>
-        <ul>
-          <li>Good: {this.state.good} </li>
-          <li>Neutral:{this.state.neutral}</li>
-          <li>Bad: {this.state.bad}</li>
-          <li>Total: {`${this.countTotalFeedback()} %`} </li>
-          <li>
-            Positive feedback: {`${this.countPositiveFeedbackPercentage()} %`}
-          </li>
-        </ul>
+        <Section title="Statistic">
+          <Statistics
+            good={this.state.good}
+            neutral={this.state.neutral}
+            bad={this.state.bad}
+            total={this.countTotalFeedback()}
+            positivePercentage={this.countPositiveFeedbackPercentage()}
+          />
+        </Section>
       </>
     );
   }
