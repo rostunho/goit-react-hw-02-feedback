@@ -8,26 +8,26 @@ export default class App extends Component {
   };
 
   render() {
+    const feedbackButtons = Object.keys(this.state);
+
     return (
       <>
         <h2>Please leave feedback</h2>
         <ul>
-          <li>
-            <button type="button">Good</button>
-          </li>
-          <li>
-            <button type="button">Neutral</button>
-          </li>
-          <li>
-            <button type="button">Bad</button>
-          </li>
+          {feedbackButtons.map(btn => {
+            return (
+              <li key={btn}>
+                <button type="button">{btn}</button>
+              </li>
+            );
+          })}
         </ul>
 
         <h3>Statistic</h3>
         <ul>
-          <li>Good: </li>
-          <li>Neutral: </li>
-          <li>Bad: </li>
+          <li>Good: {this.state.good} </li>
+          <li>Neutral:{this.state.neutral}</li>
+          <li>Bad: {this.state.bad}</li>
           <li>Total: </li>
           <li>Positive feedback: </li>
         </ul>
