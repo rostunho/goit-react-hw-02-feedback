@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import FeedbackOptions from 'components/Options/FeedbackOptions.jsx';
 import Section from 'components/Section/Section.jsx';
 import Statistics from './components/Statistics/Statistics.jsx';
 
@@ -26,22 +27,14 @@ export default class App extends Component {
   };
 
   render() {
-    const feedbackBtns = Object.keys(this.state);
-
     return (
       <>
-        <h2>Please leave feedback</h2>
-        <ul>
-          {feedbackBtns.map(btn => {
-            return (
-              <li key={btn}>
-                <button type="button" onClick={() => this.addFeedback(btn)}>
-                  {btn}
-                </button>
-              </li>
-            );
-          })}
-        </ul>
+        <Section title="Please leave feedback">
+          <FeedbackOptions
+            options={this.state}
+            onLeaveFeedback={this.addFeedback}
+          />
+        </Section>
 
         <Section title="Statistic">
           <Statistics
