@@ -1,3 +1,13 @@
+body {
+  margin: 0;
+  font-family: Montserrat;
+}
+
 ul {
   list-style: none;
+  padding: 0;
 }
+
+/* h2 {
+  margin: 0;
+} */
