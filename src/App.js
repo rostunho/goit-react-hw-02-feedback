@@ -16,6 +16,15 @@ export default class App extends Component {
             <button type="button">Bad</button>
           </li>
         </ul>
+
+        <h3>Statistic</h3>
+        <ul>
+          <li>Good: </li>
+          <li>Neutral: </li>
+          <li>Bad: </li>
+          <li>Total: </li>
+          <li>Positive feedback: </li>
+        </ul>
       </>
     );
   }
